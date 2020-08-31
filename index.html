@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PPM Birthday Carbon Thing</title>
     <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
-    <link type="text/css" rel="stylesheet" href="style.css" /> 
+    <link type="text/css" rel="stylesheet" href="assets/css/co2birthdate.css" /> 
   </head>
   <body>
     <div id="content">
@@ -16,20 +16,22 @@
           <form id="form-birthday">
             <fieldset>
               <legend>Birth Date</legend>
-              <label for="input-birth-year">
-                <span class="block">Date of Birth (YYYY)</span>
-                <input type="text" id="input-birth-year" class="input-date" />
-              </label>
-              <label for="input-birth-month">
-                <span class="block">Date of Birth (MM)</span>
-                <input type="text" id="input-birth-month" class="input-date" disabled="disabled" />
-              </label>
-              <label for="input-birth-day">
-                <span class="block">Date of Birth (DD)</span>
-                <input type="text" id="input-birth-day" class="input-date" disabled="disabled" />
-              </label>
-              <input type="submit" id="input-submit" value="Get My Birthday PPM" />
-            </fieldset>
+              <div id="fieldset-grid">
+                <label for="input-birth-year">
+                  <span class="block">Birth Year (YYYY)</span>
+                  <input type="text" id="input-birth-year" class="input-date" />
+                </label>
+                <label for="input-birth-month">
+                  <span class="block">Birth Month (MM)</span>
+                  <input type="text" id="input-birth-month" class="input-date" disabled="disabled" />
+                </label>
+                <label for="input-birth-day">
+                  <span class="block">Birth Date (DD)</span>
+                  <input type="text" id="input-birth-day" class="input-date" disabled="disabled" />
+                </label>
+                <input type="submit" id="input-submit" value="Get My Birthday PPM" />
+              </fieldset>
+            </div>
             <output id="output"></output>
           </form>
           <img id="mockup" src="https://bowdenweb.com/a/dev/shem/mockup.png" alt="Mockup of Carbon Birthday Website." />
@@ -42,5 +44,5 @@
     </div> <!-- #content -->
 
   </body>
-<script src="co2birthdate.js"></script>
+<script src="assets/js/co2birthdate.js"></script>
 </html>

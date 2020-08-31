@@ -22,6 +22,13 @@ function inputError(val){
   // destroy/erase once user starts typing again
 };
 
+// when input is of desired length, move on to the next input/step
+// should include removing disabled attribute on the next input/step....
+function inputLength(input){
+  console.log("input length, input value: "+input.value)
+  // input.addEventListener('value')
+};
+
 function inputWatch(){
   console.log("Input Watch inside onReady!");
   var inputBirthYear = document.getElementById("input-birth-year");
@@ -30,8 +37,16 @@ function inputWatch(){
 
 
   var formInputs = document.getElementsByClassName("input-date");
+  console.log("Form inputs total: "+formInputs.length);
   for(var x = 0; x<formInputs.length; x++){
-    
+    // console.log("X: "+x+", ID: "+formInputs[x]);
+    console.log("ID: "+formInputs[x].id);
+
+    //
+
+
+
+
   };
 
   /**
@@ -56,11 +71,11 @@ function inputWatch(){
 
       
     };
-    
+
+  // inputLength();
 
 
-
-    showOutput(event.key);
+    // showOutput(event.key);
   });
 
   // watch until value is 4 characters
@@ -73,6 +88,20 @@ function inputWatch(){
   
   
   
+};
+
+
+// on form submission, redirect to appropriate page based off user input
+function onSubmit(){
+  console.log("on submit!");
+
+
+};
+
+
+// toggle and/or remove disabled attribute
+function toggleAttribute(){
+  console.log("Toggle Attribute!");
 };
 
 
