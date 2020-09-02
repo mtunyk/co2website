@@ -11,6 +11,7 @@ var inputBirthMonth = document.getElementById("input-birth-month");
 var inputBirthDay = document.getElementById("input-birth-day");
 var formInputs = document.getElementsByClassName("input-date");
 var inputSubmit = document.getElementById("input-submit");
+var htmlForm = document.getElementById("form-birthday");
 
 // check key input; ensure key event key is numeric, (, ), -, ArrowLeft, ArrowRight, Delete, or Backspace
 // if key input is in the accepted values, return key input.
@@ -103,10 +104,11 @@ function inputWatch(){
   // repeat when character is 6, and also at 8 values.
   
   
-  
+  htmlForm.addEventListener("submit", formSubmit)
   
   
 };
+
 
 function removeAttribute(ele){
   console.log("remove attribute!");
@@ -120,10 +122,13 @@ function setFocus(ele){
 
 
 // on form submission, redirect to appropriate page based off user input
-function onSubmit(){
+function formSubmit(event){
+  event.preventDefault();
   console.log("on submit!");
-
-
+  console.log("Year: "+inputBirthYear.value+" Month: "+inputBirthMonth.value+" Day: "+inputBirthDay.value);
+  var birthdayURL = "/dates/"+inputBirthYear.value+"/"+inputBirthMonth.value+"/"+inputBirthDay.value+"/index.html";
+  console.log("Birthday URL: "+birthdayURL);
+  window.location.replace(birthdayURL);
 };
 
 
