@@ -6,6 +6,12 @@ function onReady(){
 };
 onReady();
 
+var inputBirthYear = document.getElementById("input-birth-year");
+var inputBirthMonth = document.getElementById("input-birth-month");
+var inputBirthDay = document.getElementById("input-birth-day");
+var formInputs = document.getElementsByClassName("input-date");
+var inputSubmit = document.getElementById("input-submit");
+
 // check key input; ensure key event key is numeric, (, ), -, ArrowLeft, ArrowRight, Delete, or Backspace
 // if key input is in the accepted values, return key input.
 function checkPhoneKey(key) {
@@ -22,61 +28,73 @@ function inputError(val){
   // destroy/erase once user starts typing again
 };
 
-// when input is of desired length, move on to the next input/step
-// should include removing disabled attribute on the next input/step....
-function inputLength(input){
-  console.log("input length, input value: "+input.value)
-  // input.addEventListener('value')
-};
-
 function inputWatch(){
-  console.log("Input Watch inside onReady!");
-  var inputBirthYear = document.getElementById("input-birth-year");
-  // var inputBirthMonth = document.getElementById("input-birth-month");
-  // var inputBirthDay = document.getElementById("input-birth-day");
+  console.log("Input Watch inside onReady XXX!");
 
-
-  var formInputs = document.getElementsByClassName("input-date");
-  console.log("Form inputs total: "+formInputs.length);
-  for(var x = 0; x<formInputs.length; x++){
-    // console.log("X: "+x+", ID: "+formInputs[x]);
-    console.log("ID: "+formInputs[x].id);
-
-    //
-
-
-
-
-  };
-
-  /**
-  var formInputsAll = document.querySelectorAll(".input-date").forEach(item => {
-    item.addEventListener("keydown", event => {
-      // handle click
-    });
-  });
-  **/
   // watch input for keydown events
   // on keydown events, ensure the key is numeric/utility; if the key is, carry on
   // do not allow any key deviating from acceptable list to fire off, aka show key value in the input to the user
   // if a key deviation is attempted, show error message to user
   inputBirthYear.addEventListener("keydown", function(event) {
-    console.log("event key: "+event.key);
+    // console.log("event key: "+event.key+", event value: "+this.value);
     if(!checkPhoneKey(event.key)){
       event.preventDefault();
       // trigger error message saying numbers only...maybe just highlight the input via outline?
       inputError(event.key);
+    };
+  });
 
+  // count length of value in input.value
+  // when it reaches desired length, remove disabled attribute from next input
+  // then pass focus to the new undisabled input
+  inputBirthYear.addEventListener("keyup", function(event) {
+    console.log("event key: "+event.key+", event value: "+this.value);
+    // on keyup, grab value of input, check its length
+    // var valueLength = inputBirthYear.value.length;
+    console.log("value: "+inputBirthYear.value+", value length: "+inputBirthYear.value.length);
 
-
-      
+    if(inputBirthYear.value.length < 4){
+    } else {
+      removeAttribute(inputBirthMonth);
+      setFocus(inputBirthMonth);
     };
 
-  // inputLength();
-
-
-    // showOutput(event.key);
   });
+
+
+
+
+  inputBirthMonth.addEventListener("keydown", function(event) {
+    if(!checkPhoneKey(event.key)){
+      event.preventDefault();
+      inputError(event.key);
+    };
+  });
+  inputBirthMonth.addEventListener("keyup", function(event) {
+    if(inputBirthMonth.value.length < 2){
+
+    } else {
+      removeAttribute(inputBirthDay);
+      setFocus(inputBirthDay);
+    };
+  });
+
+  inputBirthDay.addEventListener("keydown", function(event) {
+    if(!checkPhoneKey(event.key)){
+      event.preventDefault();
+      inputError(event.key);
+    };
+  });
+  inputBirthDay.addEventListener("keyup", function(event) {
+    if(inputBirthDay.value.length < 2){
+
+    } else {
+      removeAttribute(inputSubmit);
+      setFocus(inputSubmit);
+    };
+  });
+
+
 
   // watch until value is 4 characters
   // make sure they're numbers OR only allow numbers
@@ -88,6 +106,16 @@ function inputWatch(){
   
   
   
+};
+
+function removeAttribute(ele){
+  console.log("remove attribute!");
+  ele.disabled = false;
+};
+
+function setFocus(ele){
+  console.log("set focus!");
+  ele.focus();
 };
 
 

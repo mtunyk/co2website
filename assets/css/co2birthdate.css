@@ -121,7 +121,8 @@ input:focus{}
 input[type="text"]{
   width:100%;
 }
-input[type="text"]:disabled{
+input[type="text"]:disabled,
+input[type="submit"]:disabled{
   background-color: #eee;
   color: grey;
   border: 1px solid grey;
@@ -150,8 +151,6 @@ label,
 
 /** dummy styles **/
 header{
-  background-color:#000;
-  color:#fff;
   padding-top:2rem;
   padding-bottom:2rem;
 }
