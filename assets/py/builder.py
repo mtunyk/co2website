@@ -20,7 +20,6 @@ def write_data(p, d, html, birth_value, latest, R=2):
 	html = html.replace('{{birthvalue}}',str(birth_value))
 
 	# {{currentvalue}}
-	#print(latest.values())
 	current_value = list(latest.values())[0]
 	current_value = round(current_value,R)
 	html = html.replace('{{currentvalue}}',str(current_value))
@@ -28,7 +27,11 @@ def write_data(p, d, html, birth_value, latest, R=2):
 	# {{percentchange}}
 	percent_change = 100.0 * (current_value - birth_value) / birth_value
 	percent_change = round(percent_change,1)
-	html = html.replace('{{percentchange}}',str(percent_change))
+	prefix = ''
+	if percent_change > 0:
+		prefix = '+'
+
+	html = html.replace('{{percentchange}}',prefix+str(percent_change))
 
 	with open(p+os.sep+'index.html', 'w') as fp:
 		fp.write(html)
