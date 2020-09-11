@@ -105,8 +105,14 @@ footer h2{
   grid-template-columns:50%;
 }
 h2 small a{
-  width:80px !important;
+  line-height:1;
+  width:80px;
   height:15px;
+  text-decoration:none;
+}
+h2 small{
+  grid-column:1;
+  align-self:center;
 }
 #logo-footer{
   grid-column:2;
