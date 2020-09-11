@@ -60,9 +60,28 @@ q{
 }
 
 
+#content{
+ max-width:992px;
+ margin-left:auto;
+ margin-right:auto;
+}
+main{
+  background-color:#fff;
+  color:#3d4852;
+  padding:1em 1.5em;
+  -webkit-box-shadow:0 2px 4px 0 rgba(0, 0, 0, .1);
+  box-shadow:0 2px 4px 0 rgba(0, 0, 0, .1);
+  border-radius:.25rem;
+  border:1px solid rgb(218, 225, 231);
+}
+footer{
+  padding:.5rem 1rem;
+}
+
+
+
 /** forms **/
 form{
-  outline:2px solid #000;
   padding:1rem 2rem;
 }
 fieldset{
@@ -132,12 +151,7 @@ input[type="submit"]:disabled{
 
 
 
-#mockup{
-  max-width:1200px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
+
 label,
 #input-submit{
   display:inline-block;
@@ -150,6 +164,12 @@ label,
 
 
 /** dummy styles **/
+#mockup{
+  max-width:1200px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
 header{
   padding-top:2rem;
   padding-bottom:2rem;
