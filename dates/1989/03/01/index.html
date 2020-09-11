@@ -13,6 +13,13 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="../../../../assets/img/favicons/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- fb share
+    <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="../../../../assets/img/co2birthdate-logo-x512.png" />
+  -->
   </head>
   <body>
     <div id="content">
@@ -21,18 +28,62 @@
         <div class="container" id="main-content">
           <h1>1989-03-01 Carbon Birthday!</h1>
           <ol class="xoxo">
-            <li>on your birthdate: 353.5 ppm co2</li>
-            <li>value today:    412.59 ppm co2</li>
-            <li>percent change since your birth: 16.7%</li>
+            <li>on your birthdate: 353.5 ppm CO<sub>2</sub></li>
+            <li>value today:    412.59 ppm CO<sub>2</sub></li>
+            <li>percent change since your birth: +16.7%</li>
           </ol>
+          <h2>Shields.io</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="276" height="20" role="img" aria-label="born 353.5 ppm CO₂: today we are +16.7% higher">
+            <title>born 353.5 ppm CO₂: today we are +16.7% higher</title>
+            <linearGradient id="s" x2="0" y2="100%">
+              <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+              <stop offset="1" stop-opacity=".1"/>
+            </linearGradient>
+            <clipPath id="r">
+              <rect width="276" height="20" rx="3" fill="#fff"/>
+            </clipPath>
+            <g clip-path="url(#r)">
+              <rect width="125" height="20" fill="#555"/>
+              <rect x="125" width="151" height="20" fill="#97ca00"/>
+              <rect width="276" height="20" fill="url(#s)"/>
+            </g>
+            <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
+              <text aria-hidden="true" x="635" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1150">born 353.5 ppm CO₂</text>
+              <text x="635" y="140" transform="scale(.1)" fill="#fff" textLength="1150">born 353.5 ppm CO₂</text>
+              <text aria-hidden="true" x="1995" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1410">today we are +16.7% higher</text><text x="1995" y="140" transform="scale(.1)" fill="#fff" textLength="1410">today we are +16.7% higher</text>
+            </g>
+          </svg>
+          <ul class="xoxo social-share">
+            <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a></li>
+            <li><div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count"></div></li>
+            <!-- Load Facebook SDK for JavaScript -->
+
+          </ul>
         </div>
       </main>
       
-      <footer class="footer"><h2><small rel="license"><a href="">License</a> 2020 <!-- generate this --></small></h2></footer>
+      <footer class="footer">
+        <h2>
+          <small rel="license">
+            <a href="http://www.wtfpl.net/">
+              <img src="../../../../assets/img/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL - Do What the Fuck You Want to Public License" />
+            </a> 2020 <!-- generate this -->
+          </small>
+        </h2>
+      </footer>
     
 
     </div> <!-- #content -->
-
+    <div id="fb-root"></div>
   </body>
 <!-- <script src="assets/js/co2birthdate.js"></script> -->
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 </html>
