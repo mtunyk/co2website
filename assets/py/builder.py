@@ -4,6 +4,8 @@ import requests
 from pathlib import Path #requires Python>=3.5
 import os
 
+SUBPATH = 'docs'
+
 # safe generate folders for all dates within a range
 def create_folder(p):
 	Path(p).mkdir(parents=True, exist_ok=True)
@@ -45,7 +47,7 @@ def get_co2():
 
 def main():
 	# where to start to put the many folders
-	subpath = '..' + os.sep + '..' + os.sep + 'dates'
+	subpath = '..' + os.sep + '..' + os.sep + SUBPATH
 
 	co2, latest = get_co2()
 
