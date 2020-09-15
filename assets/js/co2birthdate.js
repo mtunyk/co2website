@@ -126,7 +126,7 @@ function formSubmit(event){
   event.preventDefault();
   console.log("on submit!");
   console.log("Year: "+inputBirthYear.value+" Month: "+inputBirthMonth.value+" Day: "+inputBirthDay.value);
-  var birthdayURL = "/dates/"+inputBirthYear.value+"/"+inputBirthMonth.value+"/"+inputBirthDay.value+"/index.html";
+  var birthdayURL = "/d/"+inputBirthYear.value+"/"+inputBirthMonth.value+"/"+inputBirthDay.value+"/index.html";
   console.log("Birthday URL: "+birthdayURL);
   window.location.replace(birthdayURL);
 };

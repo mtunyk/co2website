@@ -38,13 +38,17 @@
         <h1>{{birthdate}} CO<sub>2</sub> Birthdate!</h1>
       </header>
       <main>
+        
         <div class="container" id="main-content">
          <!-- <h1>{{birthdate}} CO<sub>2</sub> Birthdate!</h1>-->
-           <ul class="xoxo">
-            <li>On your birthdate: {{birthvalue}} ppm CO<sub>2</sub></li>
-            <li>Today's value:    {{currentvalue}} ppm CO<sub>2</sub></li>
-            <li>Since your birth: {{percentchange}}%</li>
-          </ul> 
+        
+         <div class="xoxo">
+            <div>On your birthdate: {{birthvalue}} ppm CO<sub>2</sub></div>
+            <div>Today's value:    {{currentvalue}} ppm CO<sub>2</sub></div>
+            <div>Since your birth: {{percentchange}}%</div>
+           </div>
+           
+           
           <h2>Get your shields!</h2>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="427" height="20" role="img" aria-label="born {{birthvalue}} ppm CO₂: today we are {{percentchange}}% higher">
             <title>CO₂ birthdate: {{birthvalue}} ppm: today we are {{percentchange}}% higher</title>

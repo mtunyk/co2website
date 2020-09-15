@@ -4,7 +4,7 @@ import requests
 from pathlib import Path #requires Python>=3.5
 import os
 
-SUBPATH = 'docs'
+SUBPATH = 'd'
 
 # safe generate folders for all dates within a range
 def create_folder(p):
@@ -46,8 +46,9 @@ def get_co2():
 	return co2, latest
 
 def main():
+
 	# where to start to put the many folders
-	subpath = '..' + os.sep + '..' + os.sep + SUBPATH
+	sp = '..' + os.sep + '..' + os.sep + SUBPATH
 
 	co2, latest = get_co2()
 
@@ -67,7 +68,7 @@ def main():
 		#print(d.year, d.month, d.day)
 		dict_key = '-'.join((str(d.year).zfill(4), str(d.month).zfill(2), str(d.day).zfill(2)))
 		
-		path = subpath + os.sep + str(d.year).zfill(4) + os.sep + str(d.month).zfill(2) + os.sep + str(d.day).zfill(2)
+		path = sp + os.sep + str(d.year).zfill(4) + os.sep + str(d.month).zfill(2) + os.sep + str(d.day).zfill(2)
 
 		# get value on birthdate
 		value = co2.get(dict_key)
