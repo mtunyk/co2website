@@ -71,12 +71,13 @@ h1{
   text-align:center;
 }
 footer{
-  padding:1rem;
+  padding:2.25rem 2.25rem .5rem 2.25rem;
   color:#fff;
   font-size:.875rem;
   display:grid;
   grid-template-columns:75% 25%;
   /** background-color:#666; **/
+  background-color:#212121;
 }
 /**
 .social li{
@@ -92,27 +93,40 @@ footer{
 }
 **/
 .xoxo.social{
-  /** display:grid;
-  grid-template-columns:25% 25% 25% 25%;
-  **/
-  outline:3px dotted #fff;
   padding:1rem 0;
 }
 .xoxo.social li{
   display:inline-block;
   margin-right:1rem;
+  font-weight:700;
 }
 .xoxo.social .ul-sub li{
   display:block;
-  font-weight:400;
+  font-weight:700;
   margin-right:0;
 }
 .ul-sub a{
-  font-weight:700;
+  font-weight:400;
 }
 footer a:hover{
   color:#ff0;
 }
+.xoxo.admin{
+  margin-top:1.5rem;
+  display:grid;
+  grid-template-columns:50% 50%; 
+}
+.admin li{
+  font-size:.75rem;
+}
+.admin li+li{
+  text-align:right;
+  align-self:end;
+}
+.admin a{
+  text-decoration:none;
+}
+
 
 sub{
   font-size:75%;
@@ -309,7 +323,3 @@ form{
 
 
 
-footer{
-  background-color: #212121;
-  padding:2.25rem 3rem;
-}
