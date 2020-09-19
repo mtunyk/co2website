@@ -26,9 +26,6 @@
    <body>
       <!-- facebook share button js -->
       <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="3PEgTibB"></script>
-      <!-- twitter share button js -->
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       <div id="content">
       <header class="jumbotron">
          <h1>1994-05-05 CO<sub>2</sub> Birthdate!</h1>
@@ -67,8 +64,8 @@
                </g>
             </svg>
             <h2>Share!</h2>
-            <div class="xoxo social-share">
-               <div id="twitter-button">
+            <ul class="xoxo social-share">
+               <li id="twitter-button">
                   <a class="twitter-share-button"
                      href="https://twitter.com/intent/tweet"
                      data-size="small"
@@ -79,31 +76,58 @@
                      data-hashtags="co2birthdate,co2"
                      data-via="co2birthdate">
                   Tweet</a>
-               </div>
-               <div class="fb-share-button" data-href="https://co2birth.date" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fco2birth.date%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
-               </div>
-               <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-               <script type="IN/Share" data-url="https://co2birth.date"></script>
-            </div>
+               </li>
+               <li class="fb-share-button" data-href="https://co2birth.date" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fco2birth.date%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+               </li>
+               <li><script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+               <script type="IN/Share" data-url="https://co2birth.date"></script></li>
+            </ul>
       </main>
-      <footer class="footer">
-      <div>Get in touch!<a href="https://twitter.com/co2birthdate">@co2birthdate</a> or <a href = "mailto:info@co2birth.date">Email</a></div>
-      <div>Made by <a href="https://twitter.com/philshem">@philshem</a> and <a href="https://twitter.com/jalbertbowdenii">@jalbertbowdenii</a></div>
-      <div><a href="https://github.com/co2birthdate/dataops">About the data</a></div>
-      <div>Logo credit: <a href="https://thenounproject.com/chulvi/">Alfonso López-Sanz</a></div>
-      <div>
-      <!-- generate this https://stackoverflow.com/a/4562604/2327328 -->
-      <small rel="license">
-      <a href="http://www.wtfpl.net/">
-      <img src="../../../../assets/img/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL - Do What the Fuck You Want to Public License." />
-      </a> 
-      </small>
-      <script>document.write(new Date().getFullYear())</script>
-      <img src="../../../../assets/img/co2birthdate-logo-white-x064.png" width="32" height="32" alt="CO₂ Birthdate" id="logo-footer" />
-      </div>
-      </footer>
+         <footer class="footer">
+          <!-- <img src="../../../../assets/img/co2birthdate-logo-white-x064.png" width="64" height="64" alt="CO₂ Birthdate." id="logo-footer" /> -->
+          <nav class="footer-nav">
+            <ul class="xoxo social">
+             <li>Contact
+               <ul class="xoxo ul-sub">
+                 <li><a href="https://twitter.com/co2birthdate">@co2birthdate</a></li>
+                 <li><a href="mailto:info@co2birth.date">email</a></li>
+               </ul>
+             </li>
+             <li>Made by
+               <ul class="xoxo ul-sub">
+                 <li><a href="https://twitter.com/philshem">@philshem</a></li>
+                 <li><a href="https://twitter.com/jalbertbowdenii">@jalbertbowdenii</a></li>
+               </ul>
+             </li>
+             <li><a href="https://github.com/co2birthdate/dataops">Data</a></li>
+             <li>Logo Credit
+               <ul class="xoxo ul-sub">
+                 <li><a href="https://thenounproject.com/chulvi/">Alfonso López-Sanz</a></li>
+              </ul>
+            </li>
+           </ul>
+
+           <ul class="xoxo admin">
+             <li>
+              <img src="../../../../assets/img/co2birthdate-logo-white-x064.png" width="64" height="64" alt="CO₂ Birthdate." id="logo-footer" />
+             </li>
+             <li>
+               <small rel="license">
+                 <a href="http://www.wtfpl.net/">
+                   <img src="../../../../assets/img/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL - Do What the Fuck You Want to Public License." />
+                 </a> 
+               </small>
+                2020
+             </li>
+
+           </ul>
+         </nav>
+
+         </footer>
       </div> <!-- #content -->
    </body>
    <!-- <script src="assets/js/co2birthdate.js"></script> -->
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="3PEgTibB"></script>
+      <!-- twitter share button js -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </html>
-

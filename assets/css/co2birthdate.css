@@ -74,8 +74,6 @@ footer{
   padding:2.25rem 2.25rem .5rem 2.25rem;
   color:#fff;
   font-size:.875rem;
-  display:grid;
-  grid-template-columns:75% 25%;
   /** background-color:#666; **/
   background-color:#212121;
 }
@@ -93,17 +91,24 @@ footer{
 }
 **/
 .xoxo.social{
-  padding:1rem 0;
+  padding:0 0 1rem 0;
+  display:grid;
+  grid-template-columns:25% 25% 25% 25%;
 }
 .xoxo.social li{
   display:inline-block;
-  margin-right:1rem;
+  /** margin-right:1rem; **/
   font-weight:700;
+  text-decoration:underline;
 }
 .xoxo.social .ul-sub li{
   display:block;
   font-weight:700;
   margin-right:0;
+  text-decoration:none;
+}
+.ul-sub{
+  padding-top:.35rem;
 }
 .ul-sub a{
   font-weight:400;
@@ -173,6 +178,11 @@ h2 small{
 }
 .footer-nav{
   grid-column:1 / span 2;
+}
+
+
+.social-share li{
+  display:inline-block;
 }
 
 /** forms **/
