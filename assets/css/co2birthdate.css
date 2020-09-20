@@ -151,38 +151,43 @@ header h1{
   line-height:64px;
 }
 #logo-header{}
-/**
-footer h2{
-  display:grid;
-  grid-template-columns:50%;
-}
-**/
-/**
-h2 small a{
-  line-height:1;
-  width:80px;
-  height:15px;
-  text-decoration:none;
-}
-h2 small{
-  grid-column:1;
-  align-self:center;
-  color:#fff;
-  font-size:1rem;
-}
-**/
+
+
+
 #logo-footer{
-  /** grid-column:2;
-  justify-self:end; **/
   grid-column:1 / span 2;
 }
 .footer-nav{
   grid-column:1 / span 2;
 }
 
-
+.social-share{
+  height:20px;
+  overflow:hidden;
+}
 .social-share li{
   display:inline-block;
+  height:100%;
+  overflow:hidden;
+  cursor:pointer;
+}
+#twitter-button{
+  width:61px;
+  background-color:#1c96e0;
+}
+#twitter-button a{
+  color:#1c96e0; /** this is less than ideal **/
+}
+#facebook-button{
+  width:67px;
+  background-color:#1878f3;
+}
+#facebook-button a{
+  color:#1878f3; /** this is less than ideal **/
+}
+#linkedin-button{
+  width:63px;
+  background-color:#0073b1;
 }
 
 /** forms **/
