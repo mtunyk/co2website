@@ -73,7 +73,6 @@ function inputWatch(){
   });
   inputBirthMonth.addEventListener("keyup", function(event) {
     if(inputBirthMonth.value.length < 2){
-
     } else {
       removeAttribute(inputBirthDay);
       setFocus(inputBirthDay);
