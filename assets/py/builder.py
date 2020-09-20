@@ -17,6 +17,11 @@ def write_data(p, d, html, birth_value, latest, R=2):
 	birthdate = '-'.join((str(d.year).zfill(4),str(d.month).zfill(2), str(d.day).zfill(2)))
 	html = html.replace('{{birthdate}}',birthdate)
 
+	# {{birthdate_url}}
+	birthdate_url = '/'.join((str(d.year).zfill(4),str(d.month).zfill(2), str(d.day).zfill(2)))
+	birthdate_url = 'https://co2birth.date/d/'+birthdate_url+'/index.html'
+	html = html.replace('{{birthdate_url}}',birthdate_url)
+
 	# {{birthvalue}}
 	birth_value = round(birth_value,R)
 	html = html.replace('{{birthvalue}}',str(birth_value))
