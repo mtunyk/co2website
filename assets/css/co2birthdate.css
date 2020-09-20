@@ -278,7 +278,13 @@ label{
 
 
 
-
+canvas{
+  display:none;
+}
+#png-container{
+  width:420px;
+  height:20px;
+}
 
 /** dummy styles **/
 /**

@@ -37,7 +37,7 @@
           <p>https://co2birth.date/d/1909/01/25/index.html</p>
          
           <h2>Get your shields!</h2>
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="427" height="20" role="img" aria-label="born 299.57 ppm CO₂: today we are +37.7% higher">
+          <svg id="svg-shield" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="427" height="20" role="img" aria-label="born 299.57 ppm CO₂: today we are +37.7% higher">
               <title>CO₂ birthdate: 299.57 ppm: today we are +37.7% higher</title>
               <linearGradient id="s" x2="0" y2="100%">
                 <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
@@ -61,8 +61,11 @@
                 <text x="3490" y="140" transform="scale(.1)" fill="#fff" textLength="1440">value today: 412.59 ppm CO₂</text>
               </g>
           </svg>
-
           <h2>Share!</h2>
+          <h3>Shields Share</h3>
+          <canvas id="canvas" width="500" height="400"></canvas>
+          <div id="png-container"></div>
+          
           <ul class="xoxo social-share">
               <li id="twitter-button">
                 <a class="twitter-share-button"
@@ -123,7 +126,7 @@
       </footer>
     </div> <!-- #content -->
   </body>
-  <script src="assets/js/template.js"></script>
+  <script src="../../../../assets/js/template.js"></script>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="3PEgTibB"></script>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </html>
