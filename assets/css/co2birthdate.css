@@ -68,38 +68,23 @@ main{
 }
 h1{
   margin-bottom:1.5rem;
-  text-align:center;
+  text-align:left;
 }
 footer{
   padding:2.25rem 2.25rem .5rem 2.25rem;
   color:#fff;
-  font-size:.875rem;
+  font-size:1rem;
   /** background-color:#666; **/
   background-color:#212121;
 }
-/**
-.social li{
-  display:inline-block;
-}
-.social .ul-sub,
-.social .ul-sub li{
-  display:block;
-}
 
-.ul-sub{
-  display:inline-block;
-}
-**/
 .xoxo.social{
   padding:0 0 1rem 0;
-  display:grid;
-  grid-template-columns:25% 25% 25% 25%;
 }
 .xoxo.social li{
-  display:inline-block;
+
   /** margin-right:1rem; **/
   font-weight:700;
-  text-decoration:underline;
 }
 .xoxo.social .ul-sub li{
   display:block;
@@ -112,7 +97,13 @@ footer{
 }
 .ul-sub a{
   font-weight:400;
+  font-size:.85rem;
 }
+.li-title{
+  margin-bottom:.5rem;
+  text-decoration:underline;
+}
+
 footer a:hover{
   color:#ff0;
 }
@@ -121,15 +112,27 @@ footer a:hover{
   display:grid;
   grid-template-columns:50% 50%; 
 }
-.admin li{
-  font-size:.75rem;
-}
+.admin li{}
 .admin li+li{
   text-align:right;
   align-self:end;
+  height:15px;
+  align-content:center;
+  justify-content:center;
+  line-height:1.2;
+  line-height:15px;
 }
+.admin small{
+  display:block;
+  height:100%;
+  font-size:inherit;
+}
+
 .admin a{
   text-decoration:none;
+  height:100%;
+  width:80px;
+  overflow:hidden;
 }
 
 
@@ -140,27 +143,25 @@ sub{
   vertical-align:baseline;
   bottom: -0.25em;
 }
-header{}
 header h1{
   background-image:url("../img/co2birthdate-logo-x512.png");
   background-position:5px 0;
   background-repeat:no-repeat;
   background-size:64px 64px;
-  padding-left:75px;
+  padding-left:0;
+  text-align:center;
   height:64px;
   line-height:64px;
+  font-size:1.5rem;
+  margin-bottom:0;
 }
 #logo-header{}
-
-
-
 #logo-footer{
   grid-column:1 / span 2;
 }
 .footer-nav{
   grid-column:1 / span 2;
 }
-
 .social-share{
   height:20px;
   overflow:hidden;
@@ -225,7 +226,6 @@ input{
   outline:1px solid #111;
   cursor:pointer;
 }
-
 input[type="text"],
 input[type="submit"]{
   margin-left:auto;
@@ -249,7 +249,6 @@ input[type="submit"]:disabled{
   border:1px solid grey;
   cursor:not-allowed;
 }
-
 input:hover{
   outline-style:dotted;
   background-color:#fdff00;
@@ -257,7 +256,6 @@ input:hover{
 }
 input:active{}
 input:focus{}
-
 input[type="submit"]:hover{
   background-color:#111;
   color:#fff;
@@ -265,9 +263,6 @@ input[type="submit"]:hover{
 }
 input[type="submit"]:active{}
 input[type="submit"]:focus{}
-
-
-
 
 label{
   margin-bottom:.5rem;
@@ -286,29 +281,9 @@ canvas{
   height:20px;
 }
 
-/** dummy styles **/
-/**
-#mockup{
-  max-width:1200px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
 
-main{
-  padding-top:1.5rem;
-  background-color:#fff;
-}
-footer{
-  background-color:#666;
-  padding-top:1.25rem;
-  padding-bottom:1.25rem;
-}
-form{
-  margin-left:auto;
-  margin-right:auto;
-}
-**/
+
+
 
 
 @media (min-width: 1024px) {
@@ -337,7 +312,41 @@ form{
     text-align:left;
   }
 
-
+  .xoxo.social{
+    padding:0 0 1rem 0;
+    display:grid;
+    grid-template-columns:25% 25% 25% 25%;
+  }
+  .xoxo.social li{
+    display:inline-block;
+    /** margin-right:1rem; **/
+    font-weight:700;
+    text-decoration:underline;
+  }
+  .xoxo.social .ul-sub li{
+    display:block;
+    font-weight:700;
+    margin-right:0;
+    text-decoration:none;
+  }
+  .ul-sub{
+    padding-top:.35rem;
+  }
+  .ul-sub a{
+    font-weight:400;
+  }
+  footer{
+    padding:2.25rem 2.25rem .5rem 2.25rem;
+    font-size:.875rem;
+  }
+  h1{
+    margin-bottom:1.5rem;
+    text-align:center;
+  }
+  header h1{
+    padding-left:75px;
+    text-align:left;
+  }
 }
 
 
