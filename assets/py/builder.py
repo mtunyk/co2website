@@ -2,16 +2,20 @@ from datetime import date, timedelta
 import pandas as pd
 import requests
 from pathlib import Path #requires Python>=3.5
-import os
+import os, sys
+#from pybadges import badge
 
 SUBPATH = 'd'
+
+ROUND_FLOAT = 1
+ROUND_PERCENT = 1
 
 # safe generate folders for all dates within a range
 def create_folder(p):
 	Path(p).mkdir(parents=True, exist_ok=True)
 	Path(p+os.sep+'index.html').touch()
 
-def write_data(p, d, html, birth_value, latest, R=2):
+def write_data(p, d, html, birth_value, latest):
 	
 	# {{birthdate}}
 	birthdate = '-'.join((str(d.year).zfill(4),str(d.month).zfill(2), str(d.day).zfill(2)))
@@ -23,17 +27,17 @@ def write_data(p, d, html, birth_value, latest, R=2):
 	html = html.replace('{{birthdate_url}}',birthdate_url)
 
 	# {{birthvalue}}
-	birth_value = round(birth_value,R)
+	birth_value = round(birth_value,ROUND_FLOAT)
 	html = html.replace('{{birthvalue}}',str(birth_value))
 
 	# {{currentvalue}}
 	current_value = list(latest.values())[0]
-	current_value = round(current_value,R)
+	current_value = round(current_value,ROUND_FLOAT)
 	html = html.replace('{{currentvalue}}',str(current_value))
 
 	# {{percentchange}}
 	percent_change = 100.0 * (current_value - birth_value) / birth_value
-	percent_change = round(percent_change,1)
+	percent_change = round(percent_change,ROUND_PERCENT)
 	prefix = ''
 	if percent_change > 0:
 		prefix = '+'
@@ -42,6 +46,43 @@ def write_data(p, d, html, birth_value, latest, R=2):
 
 	with open(p+os.sep+'index.html', 'w') as fp:
 		fp.write(html)
+
+	create_shield(p, birth_value, percent_change, current_value)
+
+def create_shield(p, bv, pc, cv):
+
+	svg = '''<svg id="svg-shield" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="427" height="20" role="img" aria-label="born {{birthvalue}} ppm CO₂: today we are {{percentchange}}% higher">
+			  <title>CO₂ birthdate: {{birthvalue}} ppm: today we are {{percentchange}}% higher</title>
+			  <linearGradient id="s" x2="0" y2="100%">
+				<stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+				<stop offset="1" stop-opacity=".1"/>
+			  </linearGradient>
+			  <clipPath id="r">
+				<rect width="427" height="20" rx="3" fill="#fff"/>
+			  </clipPath>
+			  <g clip-path="url(#r)">
+				<rect width="125" height="20" fill="#555"/>
+				<rect x="125" width="151" height="20" fill="#97ca00"/>
+				<rect x="275" width="151" height="20" fill="#555"/>
+				<rect width="427" height="20" fill="url(#s)"/>
+			  </g>
+			  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
+				<text aria-hidden="true" x="635" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1150">Born at {{birthvalue}} ppm CO₂</text>
+				<text x="635" y="140" transform="scale(.1)" fill="#fff" textLength="1150">Born at {{birthvalue}} ppm CO₂</text>
+				<text aria-hidden="true" x="1995" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1410">We are {{percentchange}}% higher</text>
+				<text x="1995" y="140" transform="scale(.1)" fill="#fff" textLength="1410">We are {{percentchange}}% higher</text>
+				<text aria-hidden="true" x="3490" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1440">Most recent: {{currentvalue}} ppm CO₂</text>
+				<text x="3490" y="140" transform="scale(.1)" fill="#fff" textLength="1440">Most recent: {{currentvalue}} ppm CO₂</text>
+			  </g>
+		  </svg>
+'''
+
+	svg = svg.replace('{{birthvalue}}',str(round(bv,ROUND_FLOAT)))
+	svg = svg.replace('{{percentchange}}',str(round(pc,ROUND_PERCENT)))
+	svg = svg.replace('{{currentvalue}}',str(round(cv,ROUND_FLOAT)))
+
+	with open(p+os.sep+'shield.svg', 'w') as fp:
+		fp.write(svg)
 
 def get_co2():
 
