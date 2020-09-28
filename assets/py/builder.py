@@ -4,6 +4,7 @@ import requests
 from pathlib import Path #requires Python>=3.5
 import os, sys
 #from pybadges import badge
+from urllib.parse import quote
 
 SUBPATH = 'd'
 
@@ -43,6 +44,13 @@ def write_data(p, d, html, birth_value, latest):
 		prefix = '+'
 
 	html = html.replace('{{percentchange}}',prefix+str(percent_change))
+
+	# social share links
+	"""<li><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fco2birth.date%2Fd%2F1900%2F01%2F01%2Findex.html">Share on Facebook</a></li>
+<li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fco2birth.date%2Fd%2F1900%2F01%2F01%2Findex.html">Share on Twitter</a></li>
+<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fco2birth.date%2Fd%2F1900%2F01%2F01%2Findex.html">Share on LinkedIn</a></li>"""
+	birthdate_url_encoded = quote(birthdate_url, safe='')
+	html = html.replace('{{birthdateurlencoded}}',str(birthdate_url_encoded))
 
 	with open(p+os.sep+'index.html', 'w') as fp:
 		fp.write(html)

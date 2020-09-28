@@ -82,7 +82,6 @@ footer{
   padding:0 0 1rem 0;
 }
 .xoxo.social li{
-
   /** margin-right:1rem; **/
   font-weight:700;
 }
@@ -103,6 +102,43 @@ footer{
   margin-bottom:.5rem;
   text-decoration:underline;
 }
+
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+/** social sharing links **/
+.social-share a{
+  color:#000;
+}
+.social-link{
+  background-image:url("../img/sprite-social-share-01-transparent.png");
+  background-repeat:no-repeat;
+  height:20px;
+  display:block;
+}
+.social-facebook{
+  background-position:-66px 0;
+  width:67px;
+}
+.social-twitter{
+  background-position:0 0;
+  width:61px;
+}
+.social-linkedin{
+  background-position:-138px 0;
+  width:62px;
+}
+
 
 footer a:hover{
   color:#ff0;
