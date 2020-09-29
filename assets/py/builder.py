@@ -16,7 +16,7 @@ def create_folder(p):
 	Path(p).mkdir(parents=True, exist_ok=True)
 	Path(p+os.sep+'index.html').touch()
 
-def write_data(p, d, html, birth_value, latest):
+def write_data(p, d, html, birth_value, latest, svg):
 	
 	# {{birthdate}}
 	birthdate = '-'.join((str(d.year).zfill(4),str(d.month).zfill(2), str(d.day).zfill(2)))
@@ -55,35 +55,9 @@ def write_data(p, d, html, birth_value, latest):
 	with open(p+os.sep+'index.html', 'w') as fp:
 		fp.write(html)
 
-	create_shield(p, birth_value, percent_change, current_value)
+	create_shield(p, birth_value, percent_change, current_value, svg)
 
-def create_shield(p, bv, pc, cv):
-
-	svg = '''<svg id="svg-shield" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="427" height="20" role="img" aria-label="born {{birthvalue}} ppm CO₂: today we are {{percentchange}}% higher">
-			  <title>CO₂ birthdate: {{birthvalue}} ppm: today we are {{percentchange}}% higher</title>
-			  <linearGradient id="s" x2="0" y2="100%">
-				<stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
-				<stop offset="1" stop-opacity=".1"/>
-			  </linearGradient>
-			  <clipPath id="r">
-				<rect width="427" height="20" rx="3" fill="#fff"/>
-			  </clipPath>
-			  <g clip-path="url(#r)">
-				<rect width="125" height="20" fill="#555"/>
-				<rect x="125" width="151" height="20" fill="#97ca00"/>
-				<rect x="275" width="151" height="20" fill="#555"/>
-				<rect width="427" height="20" fill="url(#s)"/>
-			  </g>
-			  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
-				<text aria-hidden="true" x="635" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1150">Born at {{birthvalue}} ppm CO₂</text>
-				<text x="635" y="140" transform="scale(.1)" fill="#fff" textLength="1150">Born at {{birthvalue}} ppm CO₂</text>
-				<text aria-hidden="true" x="1995" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1410">We are {{percentchange}}% higher</text>
-				<text x="1995" y="140" transform="scale(.1)" fill="#fff" textLength="1410">We are {{percentchange}}% higher</text>
-				<text aria-hidden="true" x="3490" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1440">Most recent: {{currentvalue}} ppm CO₂</text>
-				<text x="3490" y="140" transform="scale(.1)" fill="#fff" textLength="1440">Most recent: {{currentvalue}} ppm CO₂</text>
-			  </g>
-		  </svg>
-'''
+def create_shield(p, bv, pc, cv, svg):
 
 	svg = svg.replace('{{birthvalue}}',str(round(bv,ROUND_FLOAT)))
 	svg = svg.replace('{{percentchange}}',str(round(pc,ROUND_PERCENT)))
@@ -111,6 +85,9 @@ def main():
 	edate = list(latest.keys())[0] #date(1951,1,1) #date.today() # end date
 	edate = date(int(edate.split('-')[0]), int(edate.split('-')[1]), int(edate.split('-')[2]))
 
+	with open('template.svg','r') as fp:
+		svg_template = fp.read()
+
 	with open('template.html','r') as fp:
 		html_template = fp.read()
 
@@ -132,7 +109,7 @@ def main():
 		create_folder(path)
 
 		# write template.html as index.html and replace contents
-		write_data(path, d, html_template, value, latest)
+		write_data(path, d, html_template, value, latest, svg_template)
 		#break # debugging
 
 if __name__ == "__main__":
