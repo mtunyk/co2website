@@ -226,6 +226,14 @@ header h1{
   width:63px;
   background-color:#0073b1;
 }
+.share-url{
+  width:30px;
+  height:100%;
+  background-color:#fff;
+  background-image:url("../img/noun-project-link-1690-vert-black-crop-x020.png");
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+}
 
 /** forms **/
 form{
@@ -319,6 +327,48 @@ canvas{
 
 
 
+#birthdate-shield{
+  margin-top:.5rem;
+  margin-bottom:.5rem;
+}
+h3{
+  margin-top:.5rem;
+  margin-bottom:.95rem;
+}
+p{
+  margin-bottom:.65rem;
+}
+/**
+code,
+pre{hyphens:none}
+**/
+pre{
+  white-space:pre;
+  white-space:pre-wrap;
+  white-space:pre-line;
+  white-space:-pre-wrap;
+  white-space:-o-pre-wrap;
+  white-space:-moz-pre-wrap;
+  white-space:-hp-pre-wrap;
+  word-wrap:break-word;
+  padding:0 5px 10px 5px;
+  text-align:left;
+  background-color:#ffff80;
+  outline:1px solid #e6db55;
+}
+pre{
+  margin-top:.5rem;
+  margin-bottom:.5rem;
+}
+code{
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; /** https://perishablepress.com/perfect-pre-tags/ **/
+  font-size:80%;
+  hyphens:none;
+  color:#000;
+}
+pre code{
+  /** font-size:17px; **/
+}
 
 
 
@@ -380,7 +430,7 @@ canvas{
     text-align:left;
   }
   h3{
-    margin-bottom:0;
+    /** margin-bottom:0; **/
     text-align:left;
   }
   header h1{

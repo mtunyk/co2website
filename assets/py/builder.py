@@ -27,6 +27,12 @@ def write_data(p, d, html, birth_value, latest, svg):
 	birthdate_url = 'https://co2birth.date/d/'+birthdate_url+'/index.html'
 	html = html.replace('{{birthdate_url}}',birthdate_url)
 
+	# {{birthdate_image_url}}
+	# i'm sure there is a better way to do this. my bad. basically copying birthdate_url almost entirely...
+	birthdate_img_url = '/'.join((str(d.year).zfill(4),str(d.month).zfill(2), str(d.day).zfill(2)))
+	birthdate_img_url = 'https://co2birth.date/d/'+birthdate_img_url+'/shield.svg'
+	html = html.replace('{{birthdate_img_url}}',birthdate_img_url)
+
 	# {{birthvalue}}
 	birth_value = round(birth_value,ROUND_FLOAT)
 	html = html.replace('{{birthvalue}}',str(birth_value))
