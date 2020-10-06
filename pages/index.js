@@ -9,9 +9,9 @@ import { DatePicker, LocalizationProvider } from '@material-ui/pickers'
 import { motion } from 'framer-motion'
 import Layout from '../layouts/layout'
 
-export async function getStaticProps() {
+//export async function getStaticProps() {
   // fetch
-}
+//}
 
 const HomePage = ({ postList }) => {
   const [selectedDate, handleDateChange] = useState(new Date())
