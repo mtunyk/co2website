@@ -4,13 +4,14 @@ import Typography from '@material-ui/core/Typography'
 import MuiLink from '@material-ui/core/Link'
 
 export const Copyright = ({ className }) => (
-  <Box mt={3} py={1} align="center" className={className}>
+  <Box mt={3} py={3} align="center" className={className}>
     <Typography component="span" variant="body2">
       © { new Date().getFullYear() } co2birthdate,
     </Typography>
     &nbsp;
     <MuiLink
       href="http://www.wtfpl.net"
+      rel="noopener noreferrer"
       title="WTFPL - Do What the Fuck You Want to Public License"
     >
       WTF Public License
@@ -28,6 +29,7 @@ export const FooterSection = () => (
         <li>
           <MuiLink
             href="https://github.com/co2birthdate/dataops/blob/master/README.md"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             Our data process
@@ -36,6 +38,7 @@ export const FooterSection = () => (
         <li>
           <MuiLink
             href="https://en.wikipedia.org/wiki/Carbon_dioxide_in_Earth%27s_atmosphere#Anthropogenic_CO2_emissions"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             Anthropogenic CO₂ emissions
@@ -52,6 +55,7 @@ export const FooterSection = () => (
         <li>
           <MuiLink
             href="https://twitter.com/philshem"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             @philshem
@@ -60,6 +64,7 @@ export const FooterSection = () => (
         <li>
           <MuiLink
             href="https://twitter.com/jalbertbowdenii"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             @jalbertbowdenii
@@ -78,6 +83,7 @@ export const FooterSection = () => (
           &nbsp;
           <MuiLink
             href="https://twitter.com/co2birthdate"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             @co2birthdate
@@ -88,6 +94,7 @@ export const FooterSection = () => (
           &nbsp;
           <MuiLink
             href="mailto:info@co2birth.date"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             info@co2birth.date
@@ -106,6 +113,7 @@ export const FooterSection = () => (
           &nbsp;
           <MuiLink
             href="https://thenounproject.com/chulvi"
+            rel="noopener noreferrer"
             variant="subtitle1"
           >
             Alfonso López-Sanz

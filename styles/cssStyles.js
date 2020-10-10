@@ -1,19 +1,19 @@
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles, darken } from '@material-ui/core/styles'
 
-// import { colorStyles } from './utilities/_color'
-// import { landingStyles } from './utilities/_landing'
-
 const CssStyles = () => {
-  // colorStyles()
-  // landingStyles()
-
   (makeStyles(({ palette, ...theme }) => ({
     '@global': {
       ul: {
         margin: 0,
         padding: 0,
         listStyle: 'none',
+      },
+
+      '#__next': {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
       },
 
       'main > section': {
@@ -25,7 +25,9 @@ const CssStyles = () => {
       },
 
       'footer#footer': {
-        background: palette.text.primary,
+        marginTop: 'auto',
+        paddingTop: theme.spacing(3),
+        background: '#172225',
         color: palette.background.default,
 
         '& section': {
@@ -48,13 +50,6 @@ const CssStyles = () => {
           },
         },
       },
-
-      // link: {
-      //   borderRadius: 4,
-      //   '&:hover': {
-      //     background: darken('#011C3A', 0.2),
-      //   },
-      // },
     },
   })))()
 
