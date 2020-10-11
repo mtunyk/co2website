@@ -4,6 +4,10 @@ import { makeStyles, darken } from '@material-ui/core/styles'
 const CssStyles = () => {
   (makeStyles(({ palette, ...theme }) => ({
     '@global': {
+      html: {
+        backgroundColor: '#172225',
+      },
+
       ul: {
         margin: 0,
         padding: 0,
@@ -27,7 +31,7 @@ const CssStyles = () => {
       'footer#footer': {
         marginTop: 'auto',
         paddingTop: theme.spacing(3),
-        background: '#172225',
+        backgroundColor: '#172225',
         color: palette.background.default,
 
         '& section': {
@@ -53,7 +57,7 @@ const CssStyles = () => {
     },
   })))()
 
-  return (<CssBaseline />)
+  return <CssBaseline />
 }
 
 export default CssStyles

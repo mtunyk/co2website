@@ -1,12 +1,13 @@
 import React from 'react'
-import Link from '../components/common/link'
 import MuiLink from '@material-ui/core/Link'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 // import SvgIcon from '@material-ui/core/SvgIcon'
+
 // import WtfplSvg from '../assets/svg/wtfpl.svg'
 import LogoSvg from '../assets/svg/co2birthdate.svg'
+import Link from '../components/common/link'
 
 const Nav = () => (
   <Box component="nav" pt={1} pb={3}>

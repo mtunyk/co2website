@@ -22,7 +22,7 @@ export const Copyright = ({ className }) => (
 export const FooterSection = () => (
   <Grid container spacing={3} justify="space-evenly">
     <Grid component="section" item xs={12} sm={6} md={3}>
-      <Typography variant="h6" gutterBottom>
+      <Typography component="h2" variant="h6" gutterBottom>
         About us
       </Typography>
       <ul>
@@ -41,14 +41,14 @@ export const FooterSection = () => (
             rel="noopener noreferrer"
             variant="subtitle1"
           >
-            Anthropogenic CO₂ emissions
+            Anthropogenic CO<sub>2</sub> emissions
           </MuiLink>
         </li>
       </ul>
     </Grid>
 
     <Grid component="section" item xs={12} sm={6} md={3}>
-      <Typography variant="h6" gutterBottom>
+      <Typography component="h2" variant="h6" gutterBottom>
         Created by
       </Typography>
       <ul>
@@ -74,7 +74,7 @@ export const FooterSection = () => (
     </Grid>
 
     <Grid component="section" item xs={12} sm={6} md={3}>
-      <Typography variant="h6" gutterBottom>
+      <Typography component="h2" variant="h6" gutterBottom>
         Get in touch
       </Typography>
       <ul>
@@ -104,7 +104,7 @@ export const FooterSection = () => (
     </Grid>
 
     <Grid component="section" item xs={12} sm={6} md={3}>
-      <Typography variant="h6" gutterBottom>
+      <Typography component="h2" variant="h6" gutterBottom>
         Credits
       </Typography>
       <ul>

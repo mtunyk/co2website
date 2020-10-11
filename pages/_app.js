@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { AppContextProvider } from '../providers/appContextService'
 import theme from '../layouts/theme'
-import CssStyles from '../styles/cssStyles'
+import CssStyles from '../assets/jss/styles'
 
 const NoLayout = ({ children }) => children
 

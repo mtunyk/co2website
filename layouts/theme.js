@@ -24,6 +24,18 @@ const options = {
         textTransform: 'none',
       },
     },
+    MuiLink: {
+      underlineHover: {
+        '&:hover': {
+          color: '#137333',
+        },
+      },
+      underlineNone: {
+        '&:hover': {
+          color: '#172225',
+        },
+      },
+    },
   },
 }
 
