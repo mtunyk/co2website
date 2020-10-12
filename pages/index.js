@@ -1,0 +1,94 @@
+import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
+import { DatePicker } from '@material-ui/pickers'
+import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { isValid, format } from 'date-fns'
+import Layout from '../layouts/layout'
+import { DATE_FORMAT, DATE_MASK, WEBSITE_URL } from '../lib/constants'
+
+const HomePage = () => {
+  const router = useRouter()
+  const [ birthdate, setBirthdate ] = useState(new Date())
+
+  const handleOnChangeBirthdate = (date) => {
+    const validDate = isValid(date) ? date : null
+    setBirthdate(validDate)
+  }
+
+  const handleSubmit = (event) => {
+    if (!isValid(birthdate)) {
+      event.preventDefault()
+      return false
+    }
+
+    const date = format(birthdate, DATE_FORMAT)
+    router.push('/co2/[date]', `/co2/${date}`)
+  }
+
+  return (
+  <Grid container component="section" alignItems="center" spacing={3}>
+    <Grid item xs={12} sm={6}>
+      <motion.img
+        src="/img/carbon_cycle.jpg"
+        width="100%"
+        alt="carbon_cycle"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+      />
+    </Grid>
+
+    <Grid item xs={12} sm={6}>
+      <Typography component="h1" variant="h3" gutterBottom>
+        What's Your CO<sub>2</sub> Birthdate?
+      </Typography>
+
+      <Box my={5}>
+        <Typography variant="body2">Enter a valid date (since 1900)</Typography>
+        <Box mt={3}>
+          <DatePicker
+            renderInput={(props) => <TextField {...props} />}
+            clearable
+            disableFuture
+            allowSameDateSelection
+            openTo="year"
+            views={[ "year", "month", "date" ]}
+            mask={DATE_MASK}
+            inputFormat={DATE_FORMAT}
+            maxDate={new Date()}
+            value={birthdate}
+            onChange={handleOnChangeBirthdate}
+          />
+        </Box>
+      </Box>
+
+      <Button
+        variant="outlined"
+        color="primary"
+        disabled={!birthdate}
+        onClick={handleSubmit}
+      >
+        Get My Birthdate CO<sub>2</sub>
+      </Button>
+    </Grid>
+  </Grid>
+)
+}
+
+HomePage.Layout = (props) => Layout({
+  title: 'CO₂ Birthdate!',
+  meta: [
+    { name: 'description', content: 'Get know the atmospheric carbon dioxide (CO₂) measurement on date of your birth and nowadays.' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: WEBSITE_URL },
+    { property: 'og:image', content: `${WEBSITE_URL}/img/co2birthdate-logo-x512.png` },
+    { property: 'og:description', content: 'Get know the atmospheric carbon dioxide (CO₂) measurement on date of your birth and nowadays.' },
+  ],
+  ...props,
+})
+
+export default HomePage
