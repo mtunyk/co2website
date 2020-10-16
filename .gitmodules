@@ -1,0 +1,6 @@
+[submodule "data"]
+	path = data
+	url = https://github.com/co2birthdate/dataops.git
+[submodule "dataops"]
+	path = dataops
+	url = https://github.com/co2birthdate/dataops.git
