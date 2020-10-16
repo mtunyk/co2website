@@ -20,6 +20,13 @@ const CssStyles = () => {
         minHeight: '100vh',
       },
 
+      'main > h1': {
+        textAlign: 'center',
+        [theme.breakpoints.up('sm')]: {
+          textAlign: 'left',
+        },
+      },
+
       'main > section': {
         paddingBottom: theme.spacing(3),
         textAlign: 'center',

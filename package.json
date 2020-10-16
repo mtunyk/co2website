@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "license": "LICENSE",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
+    "start": "serve -l 3000 out",
     "clean": "rimraf out/ .next/ node_modules/.cache",
     "build": "next build",
     "export": "next export && echo > out/.nojekyll",
-    "prestart": "run-s clean build export",
-    "start": "serve -l 3000 out",
-    "predeploy": "run-s prestart",
+    "preexport": "run-s clean build",
     "deploy": "git add out/ && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "dev": "next",
     "test": "echo 'Error: no test specified'"
