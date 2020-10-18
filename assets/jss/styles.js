@@ -1,5 +1,5 @@
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { makeStyles, darken } from '@material-ui/core/styles'
+import { makeStyles, darken, lighten } from '@material-ui/core/styles'
 
 const CssStyles = () => {
   (makeStyles(({ palette, ...theme }) => ({
@@ -14,24 +14,35 @@ const CssStyles = () => {
         listStyle: 'none',
       },
 
+      pre: {
+        whiteSpace: 'pre-wrap',
+        textAlign: 'left',
+        padding: theme.spacing(3),
+        background: lighten(palette.primary.light, 0.7),
+        border: `solid 1px ${palette.primary.main}`,
+        borderRadius: '3px',
+      },
+
       '#__next': {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
       },
 
-      'main > h1': {
-        textAlign: 'center',
-        [theme.breakpoints.up('sm')]: {
-          textAlign: 'left',
+      'main': {
+        '& > h1': {
+          textAlign: 'center',
+          [theme.breakpoints.up('sm')]: {
+            textAlign: 'left',
+          },
         },
-      },
 
-      'main > section': {
-        paddingBottom: theme.spacing(3),
-        textAlign: 'center',
-        [theme.breakpoints.up('sm')]: {
-          textAlign: 'left',
+        '& > section': {
+          paddingBottom: theme.spacing(3),
+          textAlign: 'center',
+          [theme.breakpoints.up('sm')]: {
+            textAlign: 'left',
+          },
         },
       },
 

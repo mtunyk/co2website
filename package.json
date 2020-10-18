@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "serve -l 3000 out",
-    "clean": "rimraf out/ .next/ node_modules/.cache",
+    "clean": "rimraf public/shields/ out/ .next/ node_modules/.cache",
     "build": "next build",
     "export": "next export && echo > out/.nojekyll",
     "preexport": "run-s clean build",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/pickers": "^4.0.0-alpha.12",
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
