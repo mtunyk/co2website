@@ -8,12 +8,6 @@ const CssStyles = () => {
         backgroundColor: '#172225',
       },
 
-      ul: {
-        margin: 0,
-        padding: 0,
-        listStyle: 'none',
-      },
-
       pre: {
         whiteSpace: 'pre-wrap',
         textAlign: 'left',
@@ -22,6 +16,34 @@ const CssStyles = () => {
         border: `solid 1px ${palette.primary.main}`,
         borderRadius: '3px',
       },
+
+      ul: {
+        margin: 0,
+        padding: 0,
+        listStyle: 'none',
+
+        '&.row': {
+          display: 'flex',
+          flexDirection: 'row',
+
+          '& > li+li': {
+            paddingLeft: theme.spacing(1),
+          },
+        },
+      },
+
+      '.social-links': {
+        display: 'flex',
+        justifyContent: 'center',
+
+        [theme.breakpoints.up('sm')]: {
+          justifyContent: 'start',
+        },
+      },
+
+      '.twitter': { color: '#55acee' },
+      '.facebook': { color: '#3b5999' },
+      '.linkedin': { color: '#0077B5' },
 
       '#__next': {
         display: 'flex',
@@ -43,6 +65,15 @@ const CssStyles = () => {
           [theme.breakpoints.up('sm')]: {
             textAlign: 'left',
           },
+
+          '& > ul > li.MuiListItem-dense': {
+            paddingTop: 0,
+            paddingBottom: 0,
+          },
+
+          '& > h2': {
+            paddingBottom: theme.spacing(1),
+          }
         },
       },
 

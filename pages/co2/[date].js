@@ -5,6 +5,11 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Typography from '@material-ui/core/Typography'
 import Snackbar from '@material-ui/core/Snackbar'
 import Alert from '@material-ui/lab/Alert'
+import MuiLink from '@material-ui/core/Link'
+import TwitterIcon from '@material-ui/icons/Twitter'
+import FacebookIcon from '@material-ui/icons/Facebook'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import LinkIcon from '@material-ui/icons/Link'
 import { useState } from 'react'
 import { parse, format } from 'date-fns'
 
@@ -14,6 +19,9 @@ import { getCo2Data, getCo2ByDate } from '../../lib/api'
 import { DATE_FORMAT, DEFAULT_DATE, WEBSITE_URL } from '../../lib/constants'
 
 const CO2Page = ({ date, ppm, difference, latest }) => {
+  const pageUrl = `${WEBSITE_URL}/co2/${date}`
+  const pageUrlEncoded = encodeURIComponent(pageUrl)
+  const shareTextEncoded = encodeURIComponent(`My CO₂ birthdate was ${ppm} ppm. Today we are at ${latest.ppm} ppm. That's ${difference}% higher!`)
   const codeHtml = `<img src="${WEBSITE_URL}/shields/${date}.svg" alt="${WEBSITE_URL} Shield for ${date}." />`
   const codeMarkdown = `![${WEBSITE_URL} Shield for ${date}.](${WEBSITE_URL}/shields/${date}.svg)`
 
@@ -68,7 +76,7 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
         </Typography>
 
         <section>
-          <List>
+          <List disablePadding dense>
             <ListItem disableGutters>
               <Box pr={2}>
                 <Typography component="span" variant="h5">
@@ -106,16 +114,17 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
               </ListItemText>
             </ListItem>
           </List>
+        </section>
 
-          <Typography variant="h5">
+        <section>
+          <Typography component="h2" variant="h5">
             Get your shield!
           </Typography>
-          <Typography>
-            Double click on green area to copy the code in green area
-            (or just select text and copy).
+          <Typography variant="body2">
+            Double click on green area to copy the code or just select text and copy.
           </Typography>
 
-          <Box my={2}>
+          <Box mt={2}>
             <Shield
               birthvalue={ppm}
               currentvalue={latest.ppm}
@@ -124,7 +133,7 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
           </Box>
 
           <Box my={1}>
-            <Typography variant="h5">
+            <Typography component="h3" variant="subtitle1">
               HTML
             </Typography>
             <pre
@@ -137,7 +146,7 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
           </Box>
 
           <Box my={1}>
-            <Typography variant="h5">
+            <Typography component="h3" variant="subtitle1">
               Markdown
             </Typography>
             <pre
@@ -148,12 +157,55 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
               <code>{codeMarkdown}</code>
             </pre>
           </Box>
+        </section>
 
-          <Box my={1}>
-            <Typography variant="h5">
-              Share on social media!
-            </Typography>
-            tw fb in link
+        <section>
+          <Typography component="h2" variant="h5">
+            Share on social media!
+          </Typography>
+          <Box className="social-links" my={1}>
+            <ul className="row">
+            <li>
+              <MuiLink
+                href={`https://twitter.com/intent/tweet?url=${pageUrlEncoded}&via=co2birthdate&text=${shareTextEncoded}&hashtags=co2birthdate`}
+                rel="noopener nofollow noreferrer"
+                target="_blank"
+                title="Share on Twitter"
+              >
+                <TwitterIcon className="twitter" fontSize="large" />
+              </MuiLink>
+            </li>
+            <li>
+              <MuiLink
+                href={`https://www.facebook.com/sharer.php?u=${pageUrlEncoded}`}
+                rel="noopener nofollow noreferrer"
+                target="_blank"
+                title="Share on Facebook"
+              >
+                <FacebookIcon className="facebook" fontSize="large" />
+              </MuiLink>
+            </li>
+            <li>
+              <MuiLink
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${pageUrlEncoded}`}
+                rel="noopener nofollow noreferrer"
+                target="_blank"
+                title="Share on LinkedIn"
+              >
+                <LinkedInIcon className="linkedin" fontSize="large" />
+              </MuiLink>
+            </li>
+            <li>
+              <MuiLink
+                href={pageUrl}
+                rel="noopener nofollow noreferrer"
+                target="_blank"
+                title="Share this URL"
+              >
+                <LinkIcon fontSize="large" />
+              </MuiLink>
+            </li>
+          </ul>
           </Box>
         </section>
       </Layout>

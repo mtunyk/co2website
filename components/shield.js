@@ -43,7 +43,7 @@ const Shield = ({ birthvalue, currentvalue, percentchange }) => (
         Current: {currentvalue} ppm CO₂
       </text>
       <text x="3490" y="140" transform="scale(.1)" fill="#fff" textLength="1440">
-        Most recent: {currentvalue} ppm CO₂
+        Recent: {currentvalue} ppm CO₂
       </text>
     </g>
   </svg>
