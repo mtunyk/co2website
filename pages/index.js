@@ -9,11 +9,11 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { isValid, format } from 'date-fns'
 import Layout from '../layouts/layout'
-import { DATE_FORMAT, DATE_MASK, WEBSITE_URL } from '../lib/constants'
+import { DATE_FORMAT, DATE_MASK, DEFAULT_DATE, WEBSITE_URL } from '../lib/constants'
 
 const HomePage = () => {
   const router = useRouter()
-  const [ birthdate, setBirthdate ] = useState(new Date())
+  const [ birthdate, setBirthdate ] = useState(new Date(DEFAULT_DATE))
 
   const handleOnChangeBirthdate = (date) => {
     const validDate = isValid(date) ? date : null
@@ -28,6 +28,12 @@ const HomePage = () => {
 
     const date = format(birthdate, DATE_FORMAT)
     router.push('/co2/[date]', `/co2/${date}`)
+  }
+
+  const handleSubmitByEnter = (event) => {
+    if (event.key === 'Enter') {
+      handleSubmit(event)
+    }
   }
 
   return (
@@ -51,7 +57,7 @@ const HomePage = () => {
         <Typography variant="body2">Enter a valid date (since 1900)</Typography>
         <Box mt={3}>
           <DatePicker
-            renderInput={(props) => <TextField {...props} />}
+            renderInput={(props) => <TextField {...props} onKeyPress={handleSubmitByEnter} />}
             clearable
             disableFuture
             allowSameDateSelection
