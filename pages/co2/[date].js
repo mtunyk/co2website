@@ -7,7 +7,7 @@ import { parse, format } from 'date-fns'
 
 import Layout from '../../layouts/layout'
 import Shield from '../../components/shield'
-import { getCo2ByDate, getCo2Dates } from '../../lib/api'
+import { getCo2Data, getCo2ByDate } from '../../lib/api'
 import { DATE_FORMAT, DEFAULT_DATE, WEBSITE_URL } from '../../lib/constants'
 
 const CO2Page = ({ date, ppm, difference, latest }) => (
@@ -23,17 +23,17 @@ const CO2Page = ({ date, ppm, difference, latest }) => (
         { property: 'og:description', content: `CO₂ Birthdate for ${date} shows the amount of CO₂ in the atmosphere on ${date}, the amount of CO₂ in the atmosphere today, and the amount of CO₂ added to the atmosphere since this ${date}` },
       ]}
     >
-      <Typography component="h1" variant="h3" gutterBottom>
+      <Typography component="h1" variant="h4" gutterBottom>
         <time dateTime={date}>{date}</time>&nbsp;
         CO<sub>2</sub> Birthdate!
       </Typography>
 
-      <Box component="section" my={3}>
+      <section>
         <List>
-          <ListItem>
+          <ListItem disableGutters>
             <Box pr={2}>
               <Typography component="span" variant="h5">
-                {ppm}
+                {ppm?.toFixed(1)}
               </Typography>
             </Box>
             <ListItemText
@@ -42,10 +42,10 @@ const CO2Page = ({ date, ppm, difference, latest }) => (
             />
           </ListItem>
 
-          <ListItem>
+          <ListItem disableGutters>
             <Box pr={2}>
               <Typography component="span" variant="h5">
-                {latest.ppm}
+                {latest.ppm?.toFixed(1)}
               </Typography>
             </Box>
             <ListItemText
@@ -54,7 +54,7 @@ const CO2Page = ({ date, ppm, difference, latest }) => (
             />
           </ListItem>
 
-          <ListItem>
+          <ListItem disableGutters>
             <Box pr={2}>
               <span>{(difference > 0) && '+'}</span>
               <Typography component="span" variant="h5">
@@ -103,30 +103,44 @@ const CO2Page = ({ date, ppm, difference, latest }) => (
           </Typography>
           tw fb in link
         </Box>
-      </Box>
+      </section>
     </Layout>
   </>
 )
 
 export const getStaticPaths = async () => {
-  const dates = await getCo2Dates()
+  const co2Data = await getCo2Data()
 
   return {
-    paths: dates?.map(({ date }) => ({ params: { date } })),
+    paths: co2Data.map(({ date }) => ({ params: { date } })),
     fallback: false,
   }
 }
 
 export const getStaticProps = async ({ params }) => {
   const date = parse(params.date, DATE_FORMAT, new Date(DEFAULT_DATE))
-  const { co2, latest } = await getCo2ByDate(date)
-  const ppm = co2.ppm
-  const difference = ( 100 * (latest.ppm - ppm) / ppm).toFixed(1)
+  const { co2, latest, difference } = await getCo2ByDate(date)
+
+  const fs = require('fs')
+  const ReactDOMServer = require('react-dom/server')
+  const distDirSvg = 'public/shields'
+
+  if (!fs.existsSync(distDirSvg)) {
+    fs.mkdirSync(distDirSvg, { recursive: true })
+  }
+
+  fs.writeFileSync(`${distDirSvg}/${params.date}.svg`, ReactDOMServer.renderToStaticMarkup(
+    <Shield
+      birthvalue={co2.ppm}
+      currentvalue={latest.ppm}
+      percentchange={difference}
+    />
+  ))
 
   return {
     props: {
       date: format(date, DATE_FORMAT),
-      ppm,
+      ppm: co2.ppm,
       difference,
       latest,
     },

@@ -24,6 +24,6 @@ Navigate to localhost:3000 in your browser of choice to see it in action/develop
 
 To preview the website as static resources
 ```
-npm export
+npm run export
 npm start
 ```
