@@ -27,3 +27,8 @@ To preview the website as static resources
 npm run export
 npm start
 ```
+
+Once everything works fine, deploy the website to GitHub Pages
+```
+npm run deploy
+```
