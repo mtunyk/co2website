@@ -40,10 +40,10 @@ const CssStyles = () => {
           justifyContent: 'start',
         },
       },
-
-      '.twitter': { color: '#55acee' },
-      '.facebook': { color: '#3b5999' },
-      '.linkedin': { color: '#0077B5' },
+      /* 77e87d */
+      '.twitter': { color: '#55acee' }, /* 55acee */
+      '.facebook': { color: '#3b5999' }, /* 3b5999 */
+      '.linkedin': { color: '#0077B5' },  /* 0077B5 */
 
       '#__next': {
         display: 'flex',

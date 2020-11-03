@@ -9,6 +9,10 @@ export const Copyright = ({ className }) => (
       © { new Date().getFullYear() } co2birthdate,
     </Typography>
     &nbsp;
+    <Typography component="span" variant="body2">
+      (no trackers, no logs),
+    </Typography>
+    &nbsp;
     <MuiLink
       href="http://www.wtfpl.net"
       rel="noopener noreferrer"
@@ -16,6 +20,7 @@ export const Copyright = ({ className }) => (
     >
       WTF Public License
     </MuiLink>
+
   </Box>
 )
 
@@ -23,7 +28,7 @@ export const FooterSection = () => (
   <Grid container spacing={3} justify="space-evenly">
     <Grid component="section" item xs={12} sm={6} md={3}>
       <Typography component="h2" variant="h6" gutterBottom>
-        About us
+        About...
       </Typography>
       <ul>
         <li>
@@ -32,7 +37,7 @@ export const FooterSection = () => (
             rel="noopener noreferrer"
             variant="subtitle1"
           >
-            Our data process
+            the data
           </MuiLink>
         </li>
         <li>
@@ -41,7 +46,7 @@ export const FooterSection = () => (
             rel="noopener noreferrer"
             variant="subtitle1"
           >
-            Anthropogenic CO<sub>2</sub> emissions
+            our CO<sub>2</sub> emissions
           </MuiLink>
         </li>
       </ul>
@@ -54,20 +59,20 @@ export const FooterSection = () => (
       <ul>
         <li>
           <MuiLink
-            href="https://twitter.com/philshem"
+            href="https://smalldata.dev/#dev"
             rel="noopener noreferrer"
             variant="subtitle1"
           >
-            @philshem
+            Philip Shemella
           </MuiLink>
         </li>
         <li>
           <MuiLink
-            href="https://twitter.com/jalbertbowdenii"
+            href="https://bowdenweb.com/"
             rel="noopener noreferrer"
             variant="subtitle1"
           >
-            @jalbertbowdenii
+            J. Albert Bowden II
           </MuiLink>
         </li>
       </ul>
@@ -109,6 +114,28 @@ export const FooterSection = () => (
       </Typography>
       <ul>
         <li>
+          Web-dev:
+          &nbsp;
+          <MuiLink
+            href="http://tunyk.com"
+            rel="noopener noreferrer"
+            variant="subtitle1"
+          >
+            Mykola Tunyk
+          </MuiLink>
+        </li>       
+        <li>
+          Illustration:
+          &nbsp;
+          <MuiLink
+            href="http://fiverr.com/myanes"
+            rel="noopener noreferrer"
+            variant="subtitle1"
+          >
+            Marco Yanes
+          </MuiLink>
+        </li>
+        <li>
           Logo:
           &nbsp;
           <MuiLink
@@ -119,6 +146,8 @@ export const FooterSection = () => (
             Alfonso López-Sanz
           </MuiLink>
         </li>
+
+
       </ul>
     </Grid>
   </Grid>

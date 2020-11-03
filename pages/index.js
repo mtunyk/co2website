@@ -38,19 +38,19 @@ const HomePage = () => {
 
   return (
   <Grid container component="section" alignItems="center" spacing={3}>
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={5}>
       <motion.img
-        src="/img/carbon_cycle.jpg"
-        width="100%"
-        alt="carbon_cycle"
+        src="/img/co2birthdatecake_min.png"
+        width="75%"
+        alt="birthday cake with smokestack candles"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
       />
     </Grid>
 
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={5}>
       <Typography component="h1" variant="h3" gutterBottom>
-        What's Your CO<sub>2</sub> Birthdate?
+        What's your CO<sub>2</sub> Birthdate?
       </Typography>
 
       <Box my={5}>
@@ -78,7 +78,7 @@ const HomePage = () => {
         disabled={!birthdate}
         onClick={handleSubmit}
       >
-        Get My Birthdate CO<sub>2</sub>
+        Get My Birthdate CO2
       </Button>
     </Grid>
   </Grid>
@@ -88,11 +88,11 @@ const HomePage = () => {
 HomePage.Layout = (props) => Layout({
   title: 'CO₂ Birthdate!',
   meta: [
-    { name: 'description', content: 'Get know the atmospheric carbon dioxide (CO₂) measurement on date of your birth and nowadays.' },
+    { name: 'description', content: 'Get the atmospheric carbon dioxide (CO₂) measurement on any date since 1900.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: WEBSITE_URL },
     { property: 'og:image', content: `${WEBSITE_URL}/img/co2birthdate-logo-x512.png` },
-    { property: 'og:description', content: 'Get know the atmospheric carbon dioxide (CO₂) measurement on date of your birth and nowadays.' },
+    { property: 'og:description', content: 'Get the atmospheric carbon dioxide (CO₂) measurement on any date since 1900.' },
   ],
   ...props,
 })

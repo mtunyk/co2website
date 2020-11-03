@@ -34,16 +34,16 @@ const Shield = ({ birthvalue, currentvalue, percentchange }) => (
         Born at {birthvalue} ppm CO₂
       </text>
       <text aria-hidden="true" x="1995" y="150" fill="#010101" fillOpacity=".3" transform="scale(.1)" textLength="1410">
-        We are {percentchange}% higher
+      That's a {percentchange}% change 📈
       </text>
       <text x="1995" y="140" transform="scale(.1)" fill="#fff" textLength="1410">
-        We are {percentchange}% higher
+      That's a {percentchange}% change 📈
       </text>
       <text aria-hidden="true" x="3490" y="150" fill="#010101" fillOpacity=".3" transform="scale(.1)" textLength="1440">
-        Current: {currentvalue} ppm CO₂
+        Most recent: {currentvalue} ppm 🔥
       </text>
       <text x="3490" y="140" transform="scale(.1)" fill="#fff" textLength="1440">
-        Recent: {currentvalue} ppm CO₂
+        Most recent: {currentvalue} ppm 🔥
       </text>
     </g>
   </svg>

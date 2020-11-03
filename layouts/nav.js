@@ -6,7 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 // import SvgIcon from '@material-ui/core/SvgIcon'
 
 // import WtfplSvg from '../assets/svg/wtfpl.svg'
-import LogoSvg from '../assets/svg/co2birthdate.svg'
+import LogoSvg from '../assets/svg/co2logo.svg'
 import Link from '../components/common/link'
 
 const Nav = () => (

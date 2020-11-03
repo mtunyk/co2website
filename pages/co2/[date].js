@@ -21,7 +21,7 @@ import { DATE_FORMAT, DEFAULT_DATE, WEBSITE_URL } from '../../lib/constants'
 const CO2Page = ({ date, ppm, difference, latest }) => {
   const pageUrl = `${WEBSITE_URL}/co2/${date}`
   const pageUrlEncoded = encodeURIComponent(pageUrl)
-  const shareTextEncoded = encodeURIComponent(`My CO₂ birthdate was ${ppm} ppm. Today we are at ${latest.ppm} ppm. That's ${difference}% higher!`)
+  const shareTextEncoded = encodeURIComponent(`My CO₂ birthdate is ${ppm} ppm. Today we are at ${latest.ppm} ppm. That's a change of ${difference}% higher!`)
   const codeHtml = `<img src="${WEBSITE_URL}/shields/${date}.svg" alt="${WEBSITE_URL} Shield for ${date}." />`
   const codeMarkdown = `![${WEBSITE_URL} Shield for ${date}.](${WEBSITE_URL}/shields/${date}.svg)`
 
@@ -62,17 +62,16 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
       <Layout
         title={`CO₂ Birthdate for ${date}`}
         meta={[
-          { name: 'description', content: 'Get know the atmospheric carbon dioxide (CO₂) measurement on date of your birth and nowadays.' },
+          { name: 'description', content: 'Get the atmospheric carbon dioxide (CO₂) measurement on any date since 1900.' },
           { property: 'og:type', content: 'website' },
           { property: 'og:url', content: `${WEBSITE_URL}/co2/${date}` },
           { property: 'og:image', content: `${WEBSITE_URL}/img/co2birthdate-logo-x512.png` },
           { property: 'og:title', content: `CO₂ Birthdate for ${date}` },
-          { property: 'og:description', content: `CO₂ Birthdate for ${date} shows the amount of CO₂ in the atmosphere on ${date}, the amount of CO₂ in the atmosphere today, and the amount of CO₂ added to the atmosphere since this ${date}` },
+          { property: 'og:description', content: `CO₂ Birthdate for ${date} shows the amount of CO₂ in the atmosphere on ${date} compared to today.` },
         ]}
       >
         <Typography component="h1" variant="h4" gutterBottom>
-          <time dateTime={date}>{date}</time>&nbsp;
-          CO<sub>2</sub> Birthdate!
+        Happy CO<sub>2</sub> Birthdate for&nbsp;<time dateTime={date}>{date}</time>🎂🎁
         </Typography>
 
         <section>
@@ -109,8 +108,9 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
                 </Typography>
                 <span>%</span>
               </Box>
-              <ListItemText>
-                that's a change
+              <ListItemText
+              secondary={'that\'s your change'}
+               >
               </ListItemText>
             </ListItem>
           </List>
@@ -120,9 +120,6 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
           <Typography component="h2" variant="h5">
             Get your shield!
           </Typography>
-          <Typography variant="body2">
-            Double click on green area to copy the code or just select text and copy.
-          </Typography>
 
           <Box mt={2}>
             <Shield
@@ -131,6 +128,11 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
               percentchange={difference}
             />
           </Box>
+
+          <Typography variant="body2">
+            Double click on green area below to copy the code or just select text and copy.
+          </Typography>
+
 
           <Box my={1}>
             <Typography component="h3" variant="subtitle1">
