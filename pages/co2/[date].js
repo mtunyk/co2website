@@ -21,7 +21,7 @@ import { DATE_FORMAT, DEFAULT_DATE, WEBSITE_URL } from '../../lib/constants'
 const CO2Page = ({ date, ppm, difference, latest }) => {
   const pageUrl = `${WEBSITE_URL}/co2/${date}`
   const pageUrlEncoded = encodeURIComponent(pageUrl)
-  const shareTextEncoded = encodeURIComponent(`My CO₂ birthdate is ${ppm} ppm. Today we are at ${latest.ppm} ppm. That's a change of ${difference}% higher!`)
+  const shareTextEncoded = encodeURIComponent(`My CO₂ birthdate is ${ppm} ppm. Today we are at ${latest.ppm} ppm. That's a change of ${difference}%!`)
   const codeHtml = `<img src="${WEBSITE_URL}/shields/${date}.svg" alt="${WEBSITE_URL} Shield for ${date}." />`
   const codeMarkdown = `![${WEBSITE_URL} Shield for ${date}.](${WEBSITE_URL}/shields/${date}.svg)`
 
