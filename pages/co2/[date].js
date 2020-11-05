@@ -118,10 +118,14 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
 
         <section>
           <Typography component="h2" variant="h5">
-            Get your shield!
+            Share this shield on your blog or website!
           </Typography>
 
-          <Box mt={2}>
+          <Typography variant="body2">
+            As the CO₂ levels change, the data in this shield will be updated.
+          </Typography>
+
+          <Box mt={1}>
             <Shield
               birthvalue={ppm}
               currentvalue={latest.ppm}
@@ -130,7 +134,7 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
           </Box>
 
           <Typography variant="body2">
-            Double click on green area below to copy the code or just select text and copy.
+            Double-click a green box below to copy the link to your shield.
           </Typography>
 
 
