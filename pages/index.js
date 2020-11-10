@@ -40,7 +40,7 @@ const HomePage = () => {
   <Grid container component="section" alignItems="center" spacing={3}>
     <Grid item xs={12} sm={5}>
       <motion.img
-        src="/img/co2birthdatecake_min.png"
+        src="/img/co2birthdatecake_min2.png"
         width="75%"
         alt="birthday cake with smokestack candles"
         initial={{ scale: 0, opacity: 0 }}
@@ -54,7 +54,10 @@ const HomePage = () => {
       </Typography>
 
       <Box my={5}>
+      <Typography variant="body1">Discover how CO<sub>2</sub> has increased in your lifetime</Typography>
+
         <Typography variant="body2">Enter a valid date (since 1900)</Typography>
+
         <Box mt={3}>
           <DatePicker
             renderInput={(props) => <TextField {...props} onKeyPress={handleSubmitByEnter} />}
@@ -88,11 +91,11 @@ const HomePage = () => {
 HomePage.Layout = (props) => Layout({
   title: 'CO₂ Birthdate!',
   meta: [
-    { name: 'description', content: 'Get the atmospheric carbon dioxide (CO₂) measurement on any date since 1900.' },
+    { name: 'description', content: 'Discover how much atmospheric carbon dioxide (CO₂) has increased in your lifetime.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: WEBSITE_URL },
     { property: 'og:image', content: `${WEBSITE_URL}/img/co2birthdate-logo-x512.png` },
-    { property: 'og:description', content: 'Get the atmospheric carbon dioxide (CO₂) measurement on any date since 1900.' },
+    { property: 'og:description', content: 'Discover how much atmospheric carbon dioxide (CO₂) has increased in your lifetime.' },
   ],
   ...props,
 })

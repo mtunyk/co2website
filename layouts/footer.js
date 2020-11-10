@@ -59,7 +59,7 @@ export const FooterSection = () => (
       <ul>
         <li>
           <MuiLink
-            href="https://smalldata.dev/#dev"
+            href="https://smalldata.dev/#about"
             rel="noopener noreferrer"
             variant="subtitle1"
           >

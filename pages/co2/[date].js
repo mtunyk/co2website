@@ -62,12 +62,12 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
       <Layout
         title={`CO₂ Birthdate for ${date}`}
         meta={[
-          { name: 'description', content: 'Get the atmospheric carbon dioxide (CO₂) measurement on any date since 1900.' },
+          { name: 'description', content: 'Discover how much atmospheric carbon dioxide (CO₂) has increased in your lifetime, since ${date}.' },
           { property: 'og:type', content: 'website' },
           { property: 'og:url', content: `${WEBSITE_URL}/co2/${date}` },
           { property: 'og:image', content: `${WEBSITE_URL}/img/co2birthdate-logo-x512.png` },
           { property: 'og:title', content: `CO₂ Birthdate for ${date}` },
-          { property: 'og:description', content: `CO₂ Birthdate for ${date} shows the amount of CO₂ in the atmosphere on ${date} compared to today.` },
+          { property: 'og:description', content: `Discover how much atmospheric carbon dioxide (CO₂) has increased in your lifetime, since ${date}.` },
         ]}
       >
         <Typography component="h1" variant="h4" gutterBottom>
