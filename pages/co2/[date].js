@@ -62,12 +62,12 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
       <Layout
         title={`CO₂ Birthdate for ${date}`}
         meta={[
-          { name: 'description', content: 'Discover how much atmospheric carbon dioxide (CO₂) has increased in your lifetime, since ${date}.' },
+          { name: 'description', content: 'Discover how much atmospheric carbon dioxide (CO₂) emissions have increased in your lifetime.' },
           { property: 'og:type', content: 'website' },
           { property: 'og:url', content: `${WEBSITE_URL}/co2/${date}` },
           { property: 'og:image', content: `${WEBSITE_URL}/img/co2birthdate-logo-x512.png` },
           { property: 'og:title', content: `CO₂ Birthdate for ${date}` },
-          { property: 'og:description', content: `Discover how much atmospheric carbon dioxide (CO₂) has increased in your lifetime, since ${date}.` },
+          { property: 'og:description', content: `Discover how much atmospheric carbon dioxide (CO₂) emissions have increased in your lifetime, since ${date}.` },
         ]}
       >
         <Typography component="h1" variant="h4" gutterBottom>
