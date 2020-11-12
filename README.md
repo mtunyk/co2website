@@ -24,7 +24,7 @@ npm run dev
 which will get a localhost up and running for development.  
 Navigate to [localhost:3000](http://localhost:3000) in your browser to see it in action/develop in the browser.
 
-# To generate the site as static content
+### To generate the site as static content
 
 To generate the website with static resources
 ```
@@ -36,6 +36,22 @@ To preview the website loaded from static resources
 ```
 npm start
 ```
+
+### Generate the sitemap
+
+Using the npm package [`sitemap`](https://www.npmjs.com/package/sitemap)
+
+```
+npm install --save sitemap
+```
+
+and then a one-liner:
+
+```
+echo "https://co2birth.date" > listofurls.txt && find out/co2 -name "*.html" -maxdepth 1 -type f | sed 's/out/https:\/\/co2birth.date/g' >> listofurls.txt && npx sitemap --gzip --index --index-base-url https://co2birth.date < listofurls.txt > out/sitemap-index.xml.gz && rm -f sitemap-0.xml listofurls.txt
+```
+
+
 
 ### Deploy to github pages
 
