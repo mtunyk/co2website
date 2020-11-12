@@ -48,7 +48,7 @@ npm install --save sitemap
 and then a one-liner:
 
 ```
-echo "https://co2birth.date" > listofurls.txt && find out/co2 -name "*.html" -maxdepth 1 -type f | sed 's/out/https:\/\/co2birth.date/g' >> listofurls.txt && npx sitemap --index-base-url https://co2birth.date < listofurls.txt > out/sitemap.xml && rm -f listofurls.txt 
+echo "https://co2birth.date" > listofurls.txt && find out/co2 -name "*.html" -maxdepth 1 -type f | sed 's/out/https:\/\/co2birth.date/g' >> listofurls.txt && npx sitemap --index-base-url https://co2birth.date < listofurls.txt > out/sitemap.xml && rm -f listofurls.txt && gzip out/sitemap.xml
 ```
 
 
