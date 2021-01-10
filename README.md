@@ -7,6 +7,16 @@ This is the respository where the **[co2birth.date](https://co2birth.date)** web
 
 ## Developer's notes
 
+### Refresh the data
+
+The data is stored in a git repository that updates 1x weekly: : https://github.com/co2birthdate/dataops
+
+This website needs to refresh the submodule before building.
+
+```
+git submodule foreach git pull origin master
+```
+
 ### Prerequisites
 
 - [Node.js v14+](https://nodejs.org/en/download/current/)
