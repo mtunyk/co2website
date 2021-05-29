@@ -84,17 +84,6 @@ export const FooterSection = () => (
       </Typography>
       <ul>
         <li>
-          twitter:
-          &nbsp;
-          <MuiLink
-            href="https://twitter.com/co2birthdate"
-            rel="noopener noreferrer"
-            variant="subtitle1"
-          >
-            @co2birthdate
-          </MuiLink>
-        </li>
-        <li>
           e-mail:
           &nbsp;
           <MuiLink
