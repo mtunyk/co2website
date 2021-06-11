@@ -28,10 +28,10 @@ const Shield = ({ birthvalue, currentvalue, percentchange }) => (
       fontSize="110"
     >
       <text aria-hidden="true" x="635" y="150" fill="#010101" fillOpacity=".3" transform="scale(.1)" textLength="1150">
-        Born at {birthvalue} ppm CO₂
+        Born at {birthvalue?.toFixed(0)} ppm CO₂
       </text>
       <text x="635" y="140" transform="scale(.1)" fill="#fff" textLength="1150">
-        Born at {birthvalue} ppm CO₂
+        Born at {birthvalue?.toFixed(0)} ppm CO₂
       </text>
       <text aria-hidden="true" x="1995" y="150" fill="#010101" fillOpacity=".3" transform="scale(.1)" textLength="1410">
       That's a {percentchange}% change 📈

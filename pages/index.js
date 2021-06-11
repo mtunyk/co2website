@@ -54,7 +54,7 @@ const HomePage = () => {
       </Typography>
 
       <Box my={5}>
-      <Typography variant="body1">Discover how CO<sub>2</sub> has increased in your lifetime</Typography>
+      <Typography variant="body1">How much has CO<sub>2</sub> increased in your lifetime?</Typography>
 
         <Typography variant="body2">Enter a valid date (since 1900)</Typography>
 

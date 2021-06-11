@@ -78,8 +78,8 @@ const CO2Page = ({ date, ppm, difference, latest }) => {
           <List disablePadding dense>
             <ListItem disableGutters>
               <Box pr={2}>
-                <Typography component="span" variant="h5">
-                  {ppm?.toFixed(1)}
+                <Typography component="span" variant="h3">
+                  {ppm?.toFixed(0)}
                 </Typography>
               </Box>
               <ListItemText
