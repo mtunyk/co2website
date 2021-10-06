@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # this script updates the data behind the co2birth.date site
-# takes some time to build all the pages
-# and may heat up your computer
+# takes some time to build all the pages
+# and may heat up your computer
 
 # refresh data
+git submodule init
+git submodule update
+
 # https://github.com/co2birthdate/dataops
 git submodule foreach git pull origin master
 
@@ -12,6 +15,7 @@ git submodule foreach git pull origin master
 npm i
 
 # generate indidvidual pages, based on date
+mkdir -p out
 npm run export
 
 # generate sitemap
