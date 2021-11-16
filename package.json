@@ -9,11 +9,11 @@
   "scripts": {
     "start": "serve -l 3000 out",
     "clean": "rimraf public/shields/ out/ .next/ node_modules/.cache",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider; next build",
+    "build": "next build",
     "preexport": "run-s clean build",
     "export": "next export && echo > out/.nojekyll",
     "deploy": "gh-pages -d out -t true",
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider; next",
+    "dev": "next",
     "test": "echo 'Error: no test specified'"
   },
   "dependencies": {
