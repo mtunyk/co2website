@@ -19,10 +19,10 @@ mkdir -p out
 npm run export
 
 # generate sitemap
-echo "https://co2birth.date" > listofurls.txt && \
+echo "https://co2birthdate.github.io/website" > listofurls.txt && \
 	find out/co2 -name "*.html" -maxdepth 1 -type f | \
-	sed 's/out/https:\/\/co2birth.date/g' >> listofurls.txt && \
-	npx sitemap --index-base-url https://co2birth.date < listofurls.txt > out/sitemap.xml && \
+	sed 's/out/https:\/\/co2birthdate.github.io\/website/g' >> listofurls.txt && \
+	npx sitemap --index-base-url https://co2birthdate.github.io/website < listofurls.txt > out/sitemap.xml && \
 	rm -f listofurls.txt && gzip -f out/sitemap.xml
 
 # deploy site to github "pages" branch

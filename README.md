@@ -2,8 +2,8 @@
 
 ## About this project
 
-This is the respository where the **[co2birth.date](https://co2birth.date)** website lives.  
-**[co2birth.date](https://co2birth.date)** tells you the difference of atmospheric carbon dioxide (CO₂) measurement on any date since 1900 and today.
+This is the respository where the **[co2birth.date](https://co2birthdate.github.io/website/)** website lives.  
+**[co2birth.date](https://co2birthdate.github.io/website/)** tells you the difference of atmospheric carbon dioxide (CO₂) measurement on any date since 1900 and today.
 
 ## Developer's notes
 
@@ -52,7 +52,7 @@ npm start
 Using the `npx` and npm package [`sitemap`](https://www.npmjs.com/package/sitemap), run a one-liner:
 
 ```
-echo "https://co2birth.date" > listofurls.txt && find out/co2 -name "*.html" -maxdepth 1 -type f | sed 's/out/https:\/\/co2birth.date/g' >> listofurls.txt && npx sitemap --index-base-url https://co2birth.date < listofurls.txt > out/sitemap.xml && rm -f listofurls.txt && gzip out/sitemap.xml
+echo "https://co2birthdate.github.io/website" > listofurls.txt && find out/co2 -name "*.html" -maxdepth 1 -type f | sed 's/out/https:\/\/co2birthdate.github.i\/website/g' >> listofurls.txt && npx sitemap --index-base-url https://co2birthdate.github.io/website < listofurls.txt > out/sitemap.xml && rm -f listofurls.txt && gzip out/sitemap.xml
 ```
 
 ### Deploy to github pages
