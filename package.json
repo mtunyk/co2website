@@ -4,7 +4,7 @@
   "private": true,
   "license": "LICENSE",
   "engines": {
-    "node": ">=17"
+    "node": ">=21.2"
   },
   "scripts": {
     "start": "serve -l 3000 out",

@@ -19,7 +19,7 @@ git submodule foreach git pull origin master
 
 ### Prerequisites
 
-- [Node.js v17+](https://nodejs.org/en/download/current/)
+- [Node.js v21+](https://nodejs.org/en/download/current/)
 
 ### Run website locally
 
