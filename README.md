@@ -62,3 +62,10 @@ Once everything works fine, deploy the website to GitHub Pages (branch: `gh-page
 npm run deploy
 ```
 Because of the number of files, this can take some time.
+
+## License
+
+This project is licensed under **The WTFPL License (WTFPL)**, see the
+[LICENSE](LICENSE) file for more details.
+
+This project is tested with BrowserStack.
